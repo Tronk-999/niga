@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nền Hacker</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: black;
+            color: #00ff00; /* Màu chữ xanh neon */
+            font-family: 'Courier New', Courier, monospace; /* Font chữ kiểu máy tính */
+            overflow: hidden; /* Ẩn thanh cuộn */
+        }
+
+        .console {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 2em;
+            background-color: rgba(0, 0, 0, 0.8); /* Nền tối với độ trong suốt */
+            padding: 20px;
+            border: 1px solid #00ff00; /* Đường viền xanh neon */
+        }
+
+        .console p {
+            margin: 0;
+            animation: flicker 1.5s infinite; /* Hiệu ứng nhấp nháy */
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="console">
+        <p>HACKER MODE ACTIVE</p>
+    </div>
+</body>
+</html>
