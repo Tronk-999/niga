@@ -7,7 +7,7 @@ if (isset($_POST['file-content'])) {
 
     // Cấu hình thông tin GitHub
     $owner = 'Tronk-999';  // Thay đổi thành tên người dùng GitHub của bạn
-    $repo = 'Test';       // Thay đổi thành tên repository của bạn
+    $repo = 'niga';       // Thay đổi thành tên repository của bạn
     $filePath = 'user_input.txt';  // Thay đổi thành đường dẫn file trong repository
     $token = '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';  // Thay đổi thành Personal Access Token của bạn
 
