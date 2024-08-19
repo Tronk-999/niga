@@ -1,58 +1,41 @@
 <?php
-// Thay đổi các thông tin sau
-$token = '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';
-$owner = 'Tronk-999';
-$repo = 'Test';
-$filePath = 'user_input.txt'; // Đường dẫn file trong repository
-$branch = 'main'; // Nhánh mà bạn muốn cập nhật
+// Lấy dữ liệu từ biểu mẫu
+$fileContent = $_POST['file-content'];
+$fileContentBase64 = base64_encode($fileContent); // GitHub yêu cầu nội dung phải được mã hóa base64
+
+// Cấu hình thông tin GitHub
+$owner = 'Tronk-999';  // Thay đổi thành tên người dùng GitHub của bạn
+$repo = 'Test';       // Thay đổi thành tên repository của bạn
+$filePath = 'user_input.txt';  // Thay đổi thành đường dẫn file trong repository
+$token = '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';  // Thay đổi thành Personal Access Token của bạn
+
+// URL API của GitHub
 $apiUrl = "https://api.github.com/repos/$Tronk-999/$Test/contents/$user_input.txt";
 
-// Lấy dữ liệu từ form (ví dụ: form gửi dữ liệu bằng phương thức POST)
-$newContent = $_POST['data']; // Thay đổi 'data' thành tên trường từ form
-
-// Lấy thông tin hiện tại của file
-$options = [
-    'http' => [
-        'header'  => "Authorization: token $token\r\n" .
-                     "User-Agent: PHP\r\n",
-        'method'  => 'GET'
-    ]
+// Dữ liệu gửi đến GitHub API
+$data = [
+    'message' => 'Update file via PHP',
+    'content' => $fileContentBase64,
+    'branch'  => 'main'  // Tên nhánh bạn muốn cập nhật
 ];
-$context = stream_context_create($options);
-$response = file_get_contents($apiUrl, false, $context);
-$data = json_decode($response, true);
 
-// Kiểm tra xem file có tồn tại không
-if (isset($data['sha'])) {
-    $sha = $data['sha'];
-} else {
-    die('File not found.');
-}
-
-// Mã hóa nội dung mới
-$encodedContent = base64_encode($newContent);
-
-// Cập nhật file trên GitHub
 $options = [
     'http' => [
         'header'  => "Authorization: token $token\r\n" .
                      "User-Agent: PHP\r\n" .
                      "Content-Type: application/json\r\n",
         'method'  => 'PUT',
-        'content' => json_encode([
-            'message' => 'Update file with new content',
-            'content' => $encodedContent,
-            'sha'     => $sha,
-            'branch'  => $branch
-        ])
+        'content' => json_encode($data)
     ]
 ];
-$context = stream_context_create($options);
+
+$context  = stream_context_create($options);
 $response = file_get_contents($apiUrl, false, $context);
 
-if ($response === false) {
-    die('Error updating file.');
+// Kiểm tra và xử lý phản hồi
+if ($response === FALSE) {
+    die('Có lỗi xảy ra khi gửi yêu cầu tới GitHub.');
 }
 
-echo 'File updated successfully!';
+echo "Dữ liệu đã được lưu vào GitHub.";
 ?>
