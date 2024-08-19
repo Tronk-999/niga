@@ -88,8 +88,11 @@
         <img src="Logo-Zalo-Arc.webp" title="zalo" alt="Description of the image" width="50" height="50">
    </a>
     <h2 class="console">SEND ME</h2></div>
-    <form action="save_to_file.php" method="post">
-        <textarea name="userInput" rows="10" cols="30" placeholder="Enter text here..." required></textarea><br>
-        <input type="submit" value="Save to File">
+    <form method="post" action="process.php">
+    <label for="file-content">Nội dung file:</label>
+    <textarea id="file-content" name="file-content" rows="10" cols="30"></textarea>
+    <input type="submit" value="Lưu vào GitHub">
+</form>
+
 </body>
 </html>
