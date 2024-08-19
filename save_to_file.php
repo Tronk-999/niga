@@ -1,21 +1,58 @@
 <?php
-// Đặt tên tệp và đường dẫn để lưu dữ liệu
-$file = 'user_input.txt';
+// Thay đổi các thông tin sau
+$token = 'YOUR_GITHUB_PERSONAL_ACCESS_TOKEN';
+$owner = 'Tronk-999';
+$repo = 'YOUR_REPOSITORY_NAME';
+$filePath = 'user_input.txt'; // Đường dẫn file trong repository
+$branch = 'main'; // Nhánh mà bạn muốn cập nhật
+$apiUrl = "https://api.github.com/repos/$owner/$repo/contents/$filePath";
 
-// Lấy dữ liệu từ form
-$userInput = $_POST['userInput'];
+// Lấy dữ liệu từ form (ví dụ: form gửi dữ liệu bằng phương thức POST)
+$newContent = $_POST['data']; // Thay đổi 'data' thành tên trường từ form
 
-// Mở tệp tin hoặc tạo tệp tin mới
-$fileHandle = fopen($file, 'w');
+// Lấy thông tin hiện tại của file
+$options = [
+    'http' => [
+        'header'  => "Authorization: token $token\r\n" .
+                     "User-Agent: PHP\r\n",
+        'method'  => 'GET'
+    ]
+];
+$context = stream_context_create($options);
+$response = file_get_contents($apiUrl, false, $context);
+$data = json_decode($response, true);
 
-// Kiểm tra nếu tệp tin mở thành công
-if ($fileHandle) {
-    // Ghi dữ liệu vào tệp tin
-    fwrite($fileHandle, $userInput);
-    // Đóng tệp tin
-    fclose($fileHandle);
-    echo "Data has been saved to " . htmlspecialchars($file);
+// Kiểm tra xem file có tồn tại không
+if (isset($data['sha'])) {
+    $sha = $data['sha'];
 } else {
-    echo "Unable to open file for writing.";
+    die('File not found.');
 }
+
+// Mã hóa nội dung mới
+$encodedContent = base64_encode($newContent);
+
+// Cập nhật file trên GitHub
+$options = [
+    'http' => [
+        'header'  => "Authorization: token $token\r\n" .
+                     "User-Agent: PHP\r\n" .
+                     "Content-Type: application/json\r\n",
+        'method'  => 'PUT',
+        'content' => json_encode([
+            'message' => 'Update file with new content',
+            'content' => $encodedContent,
+            'sha'     => $sha,
+            'branch'  => $branch
+        ])
+    ]
+];
+$context = stream_context_create($options);
+$response = file_get_contents($apiUrl, false, $context);
+
+if ($response === false) {
+    die('Error updating file.');
+}
+
+echo 'File updated successfully!';
 ?>
