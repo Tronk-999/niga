@@ -5,7 +5,7 @@ $owner = 'Tronk-999';
 $repo = 'Test';
 $filePath = 'user_input.txt'; // Đường dẫn file trong repository
 $branch = 'main'; // Nhánh mà bạn muốn cập nhật
-$apiUrl = "https://api.github.com/repos/$owner/$repo/contents/$filePath";
+$apiUrl = "https://api.github.com/repos/$Tronk-999/$Test/contents/$user_input.txt";
 
 // Lấy dữ liệu từ form (ví dụ: form gửi dữ liệu bằng phương thức POST)
 $newContent = $_POST['data']; // Thay đổi 'data' thành tên trường từ form
