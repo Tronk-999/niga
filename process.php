@@ -10,7 +10,7 @@ $filePath = 'user_input.txt';  // Thay đổi thành đường dẫn file trong 
 $token = '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';  // Thay đổi thành Personal Access Token của bạn
 
 // URL API của GitHub
-$apiUrl = "https://api.github.com/repos/$Tronk-999/$Test/contents/$user_input.txt";
+$apiUrl = "https://api.github.com/repos/$owner/$repo/contents/$filePath";
 
 // Dữ liệu gửi đến GitHub API
 $data = [
