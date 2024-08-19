@@ -1,8 +1,8 @@
 <?php
 // Thay đổi các thông tin sau
-$token = 'YOUR_GITHUB_PERSONAL_ACCESS_TOKEN';
+$token = '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';
 $owner = 'Tronk-999';
-$repo = 'YOUR_REPOSITORY_NAME';
+$repo = 'Test';
 $filePath = 'user_input.txt'; // Đường dẫn file trong repository
 $branch = 'main'; // Nhánh mà bạn muốn cập nhật
 $apiUrl = "https://api.github.com/repos/$owner/$repo/contents/$filePath";
