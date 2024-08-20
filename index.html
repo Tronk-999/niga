@@ -6,7 +6,8 @@
     <title>Tronk</title>
     <style>
             
-        html, body {
+html, body {
+    display: flex;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -112,6 +113,41 @@ input[type="submit"]:hover {
     font-size: 5px; /* Kích thước chữ rất nhỏ */
 }
 
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#textBox {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    width: 300px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+#textBox.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hidden {
+    display: none;
+        }
+        
     </style>
 </head>
 <body>
