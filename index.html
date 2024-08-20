@@ -149,31 +149,7 @@
    <a href="https://zalo.me/0947340370">
         <img src="Logo-Zalo-Arc.webp" title="zalo" alt="Description of the image" width="50" height="50">
    </a>
-        <?php
-// Kiểm tra nếu dữ liệu từ biểu mẫu được gửi
-if (isset($_POST['fi
-    <h2 class="console">SEND ME</h2></div>
-    <form method="post" action="process.php">
-    <label for="file-content">Nội dung nhập:</label>
-    <textarea id="file-content" name="file-content" rows="10" cols="30"></textarea>
-    <input type="submit" value="send💚"> 
-    <textarea id="userInput" rows="10">Nhập dữ liệu ở đây...</textarea><br>
-    <button onclick="saveToFile()">Lưu vào user_input.txt</button>
-
-    <script>
-        function saveToFile() {
-            const text = document.getElementById('userInput').value;
-            const blob = new Blob([text], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'user_input.txt'; // Tên file bạn muốn lưu
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url); // Giải phóng tài nguyên
-        }
-    </script>
+        
         <div class="guitar-card">
         <pre>
     |--|
