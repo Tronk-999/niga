@@ -7,6 +7,8 @@
     <style>
             
 html, body {
+    margin: 0;
+    box-sizing: border-box;
     display: flex;
     height: 100%;
     margin: 0;
@@ -147,7 +149,39 @@ button:hover {
 .hidden {
     display: none;
         }
-        
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 120px;
+  background: #27282c;
+}
+
+.button {
+  position: relative;
+  padding: 16px 30px;
+  font-size: 1.5rem;
+  color: var(--color);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  text-shadow: 0 0 15px var(--color);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: 0.5s;
+  z-index: 1;
     </style>
 </head>
 <body>
@@ -186,7 +220,7 @@ button:hover {
         </pre>
         <span>Guitar lover💚</span></div>
                 <button id="toggleButton">Hiển thị Ô Văn Bản</button>
-    <div id="textBox" class="hidden">
+    <div id="textBox" class="container" class="button" style="--color: #6eff3e;">
         Guitar là một nhạc cụ có ý nghĩa sâu sắc trong nhiều nền văn hóa và thể loại âm nhạc trên toàn thế giới. Được chế tạo với khả năng tạo ra âm thanh đa dạng từ những giai điệu nhẹ nhàng đến những bản nhạc hùng tráng, guitar không chỉ là công cụ để biểu đạt cảm xúc mà còn là cầu nối giữa người chơi và khán giả.
 
 Với cấu trúc đơn giản gồm thân đàn, cần đàn và dây đàn, guitar có khả năng tạo ra âm thanh phong phú nhờ vào sự biến đổi trong kỹ thuật chơi và cách điều chỉnh dây đàn. Từ những bản nhạc cổ điển của Bach đến các giai điệu hiện đại của rock và pop, guitar đóng vai trò quan trọng trong việc định hình âm nhạc.
