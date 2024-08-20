@@ -75,67 +75,22 @@
             50% { opacity: 0.7; }
             100% { opacity: 1; }
         }
-        body {
-            background-color: #000;
-            color: #0f0;
-            font-family: 'Courier New', monospace;
-            text-align: center;
-            padding: 50px;
-        }
-        textarea {
-            background-color: #111;
-            color: #0f0;
-            border: 2px solid #0f0;
-            padding: 10px;
-            width: 80%;
-            box-sizing: border-box;
-        }
-        button {
-            background-color: #0f0;
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        button:hover {
-            background-color: #0a0;
-        }
-        body {
-            background-color: #000;
-            color: #0f0;
-            font-family: 'Courier New', monospace;
-            text-align: center;
-            padding: 50px;
-        }
         .guitar-card {
             display: inline-block;
             background-color: #111;
             border: 2px solid #0f0;
             border-radius: 10px;
             padding: 20px;
-            text-align: left;
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-            position: relative;
-        }
-        .guitar-card::before {
-            content: '🎸';
-            font-size: 100px;
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            color: #0f0;
-            opacity: 0.7;
-        }
-        .guitar-card pre {
-            margin: 0;
-            white-space: pre-wrap; /* Allows wrapping of text */
+            text-align: left;
+            white-space: pre; /* Preserve whitespace for ASCII art */
         }
         .guitar-card span {
             display: block;
             text-align: center;
-            }
+            margin-top: 10px;
+            font-size: 16px;
+                }
     </style>
 </head>
 <body>
@@ -150,19 +105,18 @@
         <img src="Logo-Zalo-Arc.webp" title="zalo" alt="Description of the image" width="50" height="50">
    </a>
         
-        <div class="guitar-card">
+            <div class="guitar-card">
         <pre>
-    |--|
-    |  |
-    |  |
-    |--|
-    |  |
-    |  |
-    |--|
-    </pre>
+  ____||____
+ /         \
+|  _     _  |
+| |_|   |_| |
+|    ____    |
+|   |____|   |
+ \___________/
+        </pre>
         <span>Guitar Shape</span>
-        </div>
-</form>
+    </div>
 
 </body>
 </html>
