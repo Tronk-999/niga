@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tronk</title>
     <style>
+        
 html, body {
     margin: 0;
     box-sizing: border-box;
     height: 100%;
     padding: 0;
-    overflow: auto; /* Đảm bảo trang có thể cuộn */
+    overflow: auto;
 }
 
 body {
@@ -18,8 +19,9 @@ body {
     color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
-    flex-direction: column; /* Đảm bảo các phần tử con sắp xếp theo chiều dọc */
-    justify-content: center; /* Căn giữa các phần tử con */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Căn giữa nội dung */
 }
 
 form {
@@ -64,19 +66,18 @@ input[type="submit"]:hover {
 
 .console {
     display: inline-block;
-    transform: translate(-100%, -0%);
     text-align: center;
     font-size: 2em;
-    background-color: rgba(0, 0, 0, 0.8); /* Nền tối với độ trong suốt */
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
-    border: 1px solid #00ff00; /* Đường viền xanh neon */
+    border: 1px solid #00ff00;
 }
 
 .console p {
     margin: 0;
-    animation: flicker 1.5s infinite; /* Hiệu ứng nhấp nháy */
-    border: 1px solid #00ff00; /* Đường viền xanh neon */
-    padding: 10px; /* Padding bên trong đường viền để trông đẹp hơn */
+    animation: flicker 1.5s infinite;
+    border: 1px solid #00ff00;
+    padding: 10px;
 }
 
 @keyframes flicker {
@@ -93,7 +94,7 @@ input[type="submit"]:hover {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
     text-align: left;
-    white-space: pre; /* Bảo toàn khoảng trắng cho ASCII art */
+    white-space: pre;
     margin: 20px;
 }
 
@@ -116,23 +117,23 @@ input[type="submit"]:hover {
     transform: scale(0.9);
     border: 2px solid #00ff00;
     box-shadow: 0 0 20px #00ff00;
-    visibility: hidden; /* Ẩn phần tử khi không được hiển thị */
+    visibility: hidden;
 }
 
 #textBox.show {
     opacity: 1;
     transform: scale(1);
-    visibility: visible; /* Hiển thị phần tử khi cần */
+    visibility: visible;
 }
 
 .hidden {
-    display: none; /* Ẩn phần tử hoàn toàn khỏi dòng chảy của trang */
+    display: none;
 }
 
 .cool-button.active {
-    background-color: transparent; /* Mất màu nền khi bảng hiện */
-    color: #00ff00; /* Màu chữ khi bảng hiện */
-    border: 2px solid #00ff00; /* Hiện viền xanh lá khi bảng hiện */
+    background-color: transparent;
+    color: #00ff00;
+    border: 2px solid #00ff00;
 }
 
 .cool-button:hover {
@@ -150,7 +151,14 @@ button {
 }
 
 button:hover {
-    background-color: #046904}
+    background-color: #046904;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
         
     </style>
 </head>
