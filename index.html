@@ -185,28 +185,31 @@ button:hover {
   transition: 0.5s;
   z-index: 1;
 }
- .cool-button {
-            background-color: #00ff00; /* Màu nền xanh lá */
-            color: white; /* Màu chữ trắng */
-            border: none; /* Không có đường viền */
-            padding: 15px 30px; /* Khoảng cách bên trong nút */
-            text-align: center; /* Căn chỉnh chữ giữa */
-            text-decoration: none; /* Không gạch chân chữ */
-            display: inline-block; /* Hiển thị nút như một khối nội tuyến */
-            font-size: 16px; /* Kích thước chữ */
-            margin: 4px 2px; /* Khoảng cách bên ngoài nút */
-            cursor: pointer; /* Con trỏ khi di chuột qua nút */
-            border-radius: 8px; /* Bo góc nút */
-            transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền khi di chuột */
- }
-     .cool-button:hover {
-            background-color: #00cc00; /* Màu nền khi di chuột qua nút */
-        }
+.cool-button {
+    background-color: #00ff00; /* Màu nền xanh lá */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Không có đường viền */
+    padding: 15px 30px; /* Khoảng cách bên trong nút */
+    text-align: center; /* Căn chỉnh chữ giữa */
+    text-decoration: none; /* Không gạch chân chữ */
+    display: inline-block; /* Hiển thị nút như một khối nội tuyến */
+    font-size: 16px; /* Kích thước chữ */
+    margin: 4px 2px; /* Khoảng cách bên ngoài nút */
+    cursor: pointer; /* Con trỏ khi di chuột qua nút */
+    border-radius: 8px; /* Bo góc nút */
+    transition: background-color 0.3s, border 0.3s; /* Hiệu ứng chuyển màu nền và viền khi di chuột và nhấn */
+}
 
-        .cool-button:active {
-            background-color: #00ff00; /* Giữ màu nền khi bấm nút */
-            color: white;
- }
+.cool-button:hover {
+    background-color: #00cc00; /* Màu nền khi di chuột qua nút */
+}
+
+.cool-button:active {
+    background-color: transparent; /* Mất màu nền khi bấm nút */
+    color: #00ff00; /* Màu chữ khi bấm nút */
+    border: 2px solid #00ff00; /* Hiện viền xanh lá khi bấm nút */
+}
+        
     </style>
 </head>
 <body>
@@ -215,7 +218,7 @@ button:hover {
         <img src="Fb.png" title="facebook" alt="Description of the image" width="50" height="50">
     </a>
    <a href="https://instagram.com/my_flstudio_music?igshid=OGQ5ZDc2ODk2ZA==" style="text-decoration: none;">
-        <img src="instagram.png" title="instagram" alt="Description of the image" width="50" height="50">
+      <img src="instagram.png" title="instagram" alt="Description of the image" width="50" height="50">
     </a>
    <a href="https://zalo.me/0947340370" style="text-decoration: none;">
         <img src="Zalo.png" title="zalo" alt="Description of the image" width="50" height="50">
