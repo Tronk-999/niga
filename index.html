@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tronk</title>
     <style>
-
-
 html, body {
     margin: 0;
     box-sizing: border-box;
-    display: flex;
     height: 100%;
     padding: 0;
     overflow: auto; /* Đảm bảo trang có thể cuộn */
@@ -20,6 +17,10 @@ body {
     background-color: black;
     color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column; /* Đảm bảo các phần tử con sắp xếp theo chiều dọc */
+    align-items: center; /* Căn giữa các phần tử con */
+    justify-content: center; /* Căn giữa các phần tử con */
 }
 
 form {
@@ -94,6 +95,7 @@ input[type="submit"]:hover {
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
     text-align: left;
     white-space: pre; /* Bảo toàn khoảng trắng cho ASCII art */
+    margin: 20px;
 }
 
 .guitar-card span {
@@ -133,9 +135,11 @@ input[type="submit"]:hover {
     color: #00ff00; /* Màu chữ khi bảng hiện */
     border: 2px solid #00ff00; /* Hiện viền xanh lá khi bảng hiện */
 }
+
 .cool-button:hover {
     background-color: #046904;
-                              }
+}
+
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -149,6 +153,16 @@ button {
 button:hover {
     background-color: #046904;
 }
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tronk</title>
+    <style>
+
+
+
         
     </style>
 </head>
