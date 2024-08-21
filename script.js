@@ -6,23 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (textBox.classList.contains('hidden')) {
             textBox.classList.remove('hidden');
             textBox.classList.add('show');
+            this.classList.add('active'); // Thêm lớp 'active' vào nút khi hiện bảng
         } else {
             textBox.classList.remove('show');
             textBox.classList.add('hidden');
+            this.classList.remove('active'); // Loại bỏ lớp 'active' khỏi nút khi ẩn bảng
         }
     });
 });
-document.getElementById('toggleButton').addEventListener('click', function() {
-        var textBox = document.getElementById('textBox');
-        var button = this;
-
-        if (textBox.classList.contains('hidden')) {
-            textBox.classList.remove('hidden');
-            textBox.classList.add('show');
-            button.classList.add('active');
-        } else {
-            textBox.classList.remove('show');
-            textBox.classList.add('hidden');
-            button.classList.remove('active');
-        }
-    });
